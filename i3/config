@@ -1,0 +1,94 @@
+
+
+
+# set mod key (MOD4 is the Super/Windows Key)
+set $mod Mod4
+
+#START UP
+
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale /home/user/Downloads/ign_travelling.jpg
+
+#KEYBINDING
+
+#Start a terminal
+bindsym $mod+Return exec kitty
+
+#Application Launcher (dmenu)
+bindsym $mod+d exec rofi -show
+
+#Close focused window
+bindsym $mod+Shift+q kill
+
+#Restart i3 in place (preserves your layout/session)
+bindsym $mod+Shift+r restart
+
+#Reload the configuration file
+bindsym $mod+Shift+c reload
+
+#Split in horizonal orientation
+bindsym $mod+b split h
+
+#Split in vertical orientation
+bindsym $mod+v split v
+
+#Toggle fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+#Move focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+#Move windows
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+#Switch to workplace N
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+#move focused window to workspace N
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# LOGOUT
+bindsym $mod+Shift+e exec "i3-msg exit"
+
+# RESTART
+bindsym $mod+Shift+Ctrl+r exec "systemctl reboot"
+
+
+# SHUTDOWN
+bindsym $mod+Shift+Ctrl+e exec "systemctl poweroff"
+
+
+# FONT
+font pango: monospace 10
+
+#KITTY
+
+#Remove window decorations for kitty
+for_window [class="kitty"] border none
+
+

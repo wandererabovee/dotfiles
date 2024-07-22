@@ -1,0 +1,9 @@
+confguration{
+	modi: "run,window,combi";
+	terminal : "kitty";
+	location: 0;
+	disable-history: false;
+	hide-scrollbar: false;
+	}
+
+	
