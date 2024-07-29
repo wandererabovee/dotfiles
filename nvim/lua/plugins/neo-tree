@@ -1,0 +1,27 @@
+print("loading neo tree config")
+
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v2.x",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+  config = function()
+    local ok, neo_tree = pcall(require, "neo-tree")
+    if not ok then
+      print("Failed to load neo-tree:" .. neo_tree)
+      return
+    end
+
+    local setup_ok, setup_err = pcall(function()
+      neo_tree.setup({
+      })
+    end)
+    if not setup_ok then
+      print("failed to setup Neotree:" .. setup_err)
+    end
+  end
+}
+
+print("neo-tree config loaded")
